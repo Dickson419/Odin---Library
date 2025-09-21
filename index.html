@@ -1,49 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
 
-    <title>Library</title>
-    <link rel="stylesheet" href="style.css">
+h1{
+    text-align: center;
+}
 
-</head>
+.container{
+    border-style: groove;
+    border-width: 3px;
+    border-color: black;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    text-align: center;
+    min-height: 10px;
 
+}
 
-<body>
-    <h1>Library</h1>
+.form_heading{
+    border-style: groove;
 
-    <div class="container">
+}
 
-        
+.books_heading{
+    border-style: groove;
 
-        <div class="form_heading">
-        
-            <h1>Add a new book to the library</h1>
-        </div>
+}
 
-        <div class="books_heading">
-            <h1>Books in the Library</h1>
-        </div>
+.form{
+    border-style: groove;
 
-        <div class="form">
-            <p>Form information</p>
-        </div>
+}
 
-        <div class="books">
-            <h1>all my books are here</h1>
-
-        </div>
-
-
-
-
-    </div>
-
-
-
-
-
-
-    <script src="main.js"></script>
+.books{
+    background-color: rgb(244, 180, 249);
+    border-style: groove;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
+    grid-column: 2 / 3;
+    gap: 20px;
+    padding: repeat(15px);
     
-</body>
-</html>
+    
+
+}
+
+
+.card{
+    
+    background-color: rgb(183, 217, 248);
+    color: black;
+    text-align: center;
+    height: fit-content;
+    display: grid;
+    
+}
+
