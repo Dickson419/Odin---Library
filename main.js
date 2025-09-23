@@ -28,6 +28,7 @@ function Book(title, author, pages, read){
 function addBookToLibrary(title, author, pages, read){
     let book = new Book(title, author, pages, read);
     myLibrary.push(book);
+    displayBooksOnPage();
 }
 
 //Display the library array
@@ -66,15 +67,57 @@ function displayBooksOnPage(){
 }
 
 
+/* ----- The Form ----- */
+
+//add an event listener to display the form to add a new book to the library
+const addBookBtn = document.querySelector(".add-book-btn"); //returns the first element that matches
+addBookBtn.addEventListener("click", displayTheForm);
+
+function displayTheForm(){
+    document.getElementById("add-book-form").style.display="";
+}
+
+//add the event listener for the form in order to add to the library array
+const submitBtn = document.querySelector(".submit-btn");
+submitBtn.addEventListener("click", takeFormData);
+
+function takeFormData(){
+    //take the information entered by the user and add this to the library array
+    let title = document.getElementById("Title").value;
+    let author = document.getElementById("Author").value;
+    let pages = document.getElementById("Pages").value;
+    let read = document.getElementById("Read").value;
+
+    //edge case if the form is not compleated 
+    if((title == "") || (author =="") || (pages =="") || (read=="")){
+        return;
+    }
+
+    //call function to add the book information to the library 
+    addBookToLibrary(title,author,pages,read);
+
+    //reset the form after the submission 
+    document.getElementById("add-book").reset();
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
 //check files are linked and working
-const TheHobbit = new Book("The Hobbit", "JRR Tolkin", "450", "yes");
+//const TheHobbit = new Book("The Hobbit", "JRR Tolkin", "450", "yes");
 // console.log(TheHobbit.info());
 
-addBookToLibrary("The Hobbit", "JRR Tolkin", "450", "yes")
-addBookToLibrary("LORT", "JRR Tolkin", "450", "yes")
-addBookToLibrary("Heart of Darkness", "J Conrad", "450", "yes")
-addBookToLibrary("Midnight Tides", "Steven Erikson", "450", "yes")
-displayBooksOnPage();
+// addBookToLibrary("The Hobbit", "JRR Tolkin", "450", "yes")
+// addBookToLibrary("LORT", "JRR Tolkin", "450", "yes")
+// addBookToLibrary("Heart of Darkness", "J Conrad", "450", "yes")
+// addBookToLibrary("Midnight Tides", "Steven Erikson", "450", "yes")
+// displayBooksOnPage();
