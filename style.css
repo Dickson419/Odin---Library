@@ -3,13 +3,20 @@ h1{
     text-align: center;
 }
 
+div{
+    text-align: center;
+    margin: 5px;
+}
+
+
 .container{
+    /*A container to create the grid and place all other divs */
     border-style: groove;
     border-width: 3px;
     border-color: black;
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 2fr; /* set the size/space of each column */
+    grid-template-rows: 1fr; /* set the size/space of each row */
     text-align: center;
     min-height: 10px;
 
@@ -27,28 +34,58 @@ h1{
 
 .form{
     border-style: groove;
+    padding: 5px;
+    margin: 5px;
 
 }
 
 .books{
+    /* where new books will be added by the JS */
     background-color: rgb(244, 180, 249);
     border-style: groove;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
-    grid-column: 2 / 3;
-    gap: 20px;
-    padding: repeat(15px);
+    grid-template-columns: 1fr 1fr;
+    grid-column: 2 / 3; /* specify where the column is in relation to the .container class */
+    gap: 20px; /* seperation between the items in each column */
+    padding: 10px;
+    margin: 5px;
 
 }
 
 
 .card{
+    /* this will be each new book the user adds (made by the JS) */
     background-color: rgb(183, 217, 248);
     color: black;
     text-align: center;
     height: fit-content;
-    /* display: grid; */
+    
     
 }
 
+.submit-btn{
+    border-radius: 10%;
+    padding: 5px;
+    box-shadow: 5px 5px 5px black;
+    margin: 5px;
+}
+
+.reset-btn{
+    border-radius: 10%;
+    padding: 5px;
+    box-shadow: 5px 5px 5px black;
+    margin: 5px;
+
+}
+
+#add-book{
+    /* the display for each input and label in the form
+    use of another grid to position them side by side */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 50px;
+    align-items: center;
+    justify-content: center;
+}
 
