@@ -100,6 +100,14 @@ function takeFormData(){
     document.getElementById("add-book").reset();
 }
 
+// ----- reset button -----
+const resetBtn = document.querySelector(".reset-btn");
+resetBtn.addEventListener("click", clearForm);
+
+function clearForm(){
+    document.getElementById("add-book").reset();
+}
+
 
 
 
